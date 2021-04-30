@@ -6,6 +6,7 @@ class Balance extends React.Component {
 	render(){
 
 		return (
+
 			<div className="balance-container">
 				
 				<div className="balance-type">
@@ -19,6 +20,7 @@ class Balance extends React.Component {
 				</div>
 
 			</div>
+			
 		);
 	}
 

@@ -1,6 +1,6 @@
 .header-container{
 	width:100%;
-	height:200px;
+	height:225px;
 	background:#9B59B6;
 	text-align:center;
 }
@@ -8,7 +8,7 @@
 .title{
 	color:white;
 	font-size:40px;
-	padding:10px 0 5px;
+	padding:20px 0 20px;
 	font-weight: 200;
 }
 
@@ -16,10 +16,11 @@
 	color:white;
 	font-weight:200;
 	font-size:20px;
+	margin-bottom:6px;
 }
 
 .balance-value{
 	color:white;
 	font-weight:bold;
-	font-size:25px;
+	font-size:35px;
 }

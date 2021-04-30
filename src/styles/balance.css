@@ -1,8 +1,9 @@
 .balance-container{
-	width:70%;
+	width:750px;
+	max-width:750px;
 	height:100px;
 	background:white;
-	margin:20px auto 0;
+	margin:35px auto 0;
 
 	display:flex;
 	flex-direction: row;
@@ -17,12 +18,12 @@
 .balance-type{
 	display:flex;
 	flex-direction: column;
-	padding-top:10px;
+	justify-content: center;
 	flex-grow: 1;
 }
 
 .balance-type-label{
-	margin:0 auto 5px;
+	padding-bottom:10px;
 	font-size:23px;
 	color:#34495e;
 }

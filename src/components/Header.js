@@ -8,6 +8,7 @@ class Header extends React.Component {
 	render(){
 
 		return (
+
 			<div className="header-container">
 				
 				<h1 className="title">Minhas Finanças</h1>
@@ -17,6 +18,7 @@ class Header extends React.Component {
 				<Balance/>
 
 			</div>
+
 		);
 	}
 
