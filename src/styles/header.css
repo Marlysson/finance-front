@@ -1,0 +1,25 @@
+.header-container{
+	width:100%;
+	height:235px;
+	background:#9B59B6;
+	text-align:center;
+}
+
+.title{
+	color:white;
+	font-size:40px;
+	padding:10px 0 10px;
+	font-weight: 200;
+}
+
+.balance-label{
+	color:white;
+	font-weight:200;
+	font-size:20px;
+}
+
+.balance-value{
+	color:white;
+	font-weight:bold;
+	font-size:25px;
+}
