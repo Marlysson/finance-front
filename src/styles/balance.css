@@ -1,11 +1,13 @@
 .balance-container{
 	width:70%;
-	height:130px;
+	height:100px;
 	background:white;
-	margin:35px auto 0;
+	margin:20px auto 0;
 
 	display:flex;
 	flex-direction: row;
+
+	border:1px solid #9B59B6;
 }
 
 .balance-type:first-child{
@@ -15,13 +17,13 @@
 .balance-type{
 	display:flex;
 	flex-direction: column;
-	padding-top:20px;
+	padding-top:10px;
 	flex-grow: 1;
 }
 
 .balance-type-label{
 	margin:0 auto 5px;
-	font-size:25px;
+	font-size:23px;
 	color:#34495e;
 }
 
