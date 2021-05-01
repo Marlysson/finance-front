@@ -17,3 +17,20 @@ code {
 	margin:0;
 	padding:0;
 }
+
+.container-sized{
+  width:750px;
+  margin:0 auto;
+}
+
+.expenses-type{
+  color:#e74c3c;
+}
+
+.incomes-type{
+  color:#1abc9c;
+}
+
+.container-pagination{
+  width:150px;
+}
