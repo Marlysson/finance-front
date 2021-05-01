@@ -13,7 +13,7 @@ class Header extends React.Component {
 				
 				<h1 className="title">Minhas Finanças</h1>
 				<p className="balance-label">Meu saldo</p>
-				<p className="balance-value">R$ 458.00</p>
+				<p className="balance-value">R$ 1458.00</p>
 
 				<Balance/>
 
