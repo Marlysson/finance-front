@@ -13,7 +13,7 @@ class ItemList extends React.Component{
 		let elements;
 
 		if ( this.props.moviments.length === 0){
-			elements = <li className="list-group-item mb-4 d-flex justify-content-center" style={{'fontWeight': 'bold'}}>Não há movimentações</li>;
+			elements = <li className="list-group-item mb-4 d-flex justify-content-center" style={{'fontWeight': 'bold', 'color': '#7f8c8d'}}>Não há movimentações</li>;
 
 		}else{
 			

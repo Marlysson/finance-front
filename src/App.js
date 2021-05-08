@@ -92,13 +92,13 @@ class App extends React.Component{
 			    <Header />
 
 			    <div className="container-sized mb-4 d-flex justify-content-between align-items-center">
-			    	<span>Movimentações</span>
+			    	<span style={{ 'fontWeight': 'bold', 'color': '#7f8c8d'}}>Movimentações</span>
 		    		<Button icon='add' description='Adicionar' modal="novoMovimento" />
 		    	</div>
 
 				<div className="modal fade" id="novoMovimento">
 					
-					<div className="modal-dialog modal-dialog-centered modal-sm">
+					<div className="modal-dialog modal-sm">
 						
 						<div className="modal-content">
 							
