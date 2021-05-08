@@ -34,3 +34,7 @@ code {
 .container-pagination{
   width:150px;
 }
+
+.form-group label{
+  padding-bottom:5px;
+}
