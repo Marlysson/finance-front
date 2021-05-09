@@ -4,7 +4,7 @@ import Header from './components/Header.js';
 import Button from './components/Button.js';
 import ItemList from './components/ItemList.js';
 import NumberFormat from 'react-number-format';
-
+import { Toast } from "react-bootstrap";
 
 class App extends React.Component{
 
@@ -12,6 +12,11 @@ class App extends React.Component{
 		super(props);
 		this.state = {
 			moviments : [],
+			showToast: false,
+			movimentDetails:{
+				operation: '',
+				amount: ''
+			},
 			description: '',
 			amount: '',
 			operation: 'income'
@@ -25,6 +30,7 @@ class App extends React.Component{
 	}
 
 	componentDidMount(){
+
 		fetch('http://localhost:8000/moviments').then(response => response.json())
 		.then((response) => {
 			this.setState({moviments: response})
@@ -57,22 +63,26 @@ class App extends React.Component{
 			"operation": this.state.operation.toUpperCase()
 		}
 		
-		let data = JSON.stringify({ moviment });
+		let data = JSON.stringify(moviment);
 
 		let headers = {
 			'Content-Type': 'application/json;charset=UTF-8'
 		}
-		console.log(moviment);
-		console.log(data);
 		
 		fetch('http://localhost:8000/moviments/',
-			{ method: 'POST', body: data , headers: headers }
+			{ method: 'POST', body: data, headers: headers }
 		).then(response => response.json())
-		 .then((response) => {
-			 console.log(response)
-			alert(`Montante de ${response.amount} registrado com sucesso.`)
+		 .then((moviment_created) => {
+			
 			this.setState((state) => {
-				return { moviments: [response, ...state.moviments]};
+				return { 
+					moviments: [...state.moviments, moviment_created],
+					movimentDetails: {
+						operation: moviment_created.operation === 'INCOME' ? 'Receita' : 'Despesa',
+						amount: moviment_created.amount
+					},
+					showToast: true
+				};
 			})
 
 		}).catch(function(error){
@@ -90,6 +100,27 @@ class App extends React.Component{
 		    <div>
 			    
 			    <Header />
+				
+				<div style={{width: 350, position: 'absolute', right:15, top: 15}}>
+
+					<div style={{position: 'relative'}}>
+
+						<Toast 
+							onClose={() => this.setState({showToast: false})}
+							show={this.state.showToast} 
+							delay={5000} autohide>
+							<Toast.Header>
+							<i className="material-icons" style={{fontSize: 20}}>paid</i>
+								<span style={{paddingLeft: 5, fontWeight: "bold"}} className="mr-auto">Nova movimentação</span>
+							</Toast.Header>
+							<Toast.Body>
+		  						<span>{this.state.movimentDetails.operation}</span> de R$ <span>{this.state.movimentDetails.amount}</span> realizada com sucesso.
+							</Toast.Body>
+						</Toast>
+
+					</div>
+
+				</div>
 
 			    <div className="container-sized mb-4 d-flex justify-content-between align-items-center">
 			    	<span style={{ 'fontWeight': 'bold', 'color': '#7f8c8d'}}>Movimentações</span>
@@ -113,7 +144,9 @@ class App extends React.Component{
 
 								</div>
 
-								<button type="button" className="close" data-dismiss="modal"></button>
+								<button id="closeModal" type="button" className="close" data-dismiss="modal">
+									<span aria-hidden="true">&times;</span>
+								</button>
 
 							</div>
 
